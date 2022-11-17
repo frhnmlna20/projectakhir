@@ -10,7 +10,6 @@ class PostController extends Controller
     {
         return view('home', [
             "title" => "All about",
-            // "about" => Post::all()
             "about" => Post::with(['category'])->latest()->get()
         ]);
     }
